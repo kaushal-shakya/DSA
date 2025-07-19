@@ -11,16 +11,20 @@ public class PartitionIndex {
         return helper(arr, 0, arr.length-1);
     }
 
+//   Idea : we will be keep all pivot less than element to left of pivot
+//      Rest to the right of pivot
     public static int helper(int[] A, int s, int e)
     {
         int pivot = A[e];
         int l  = s;
         int r = e-1;
 
+        //at loop end, l will be on element greater than pivot
         while (l <= r){
+            //if A[left] is LTE to pivot, it means valid position. So increment l
             if(A[l] <= pivot)
                 l++;
-            else if (A[r] > pivot) {
+            else if (A[r] > pivot) { //if A[right] is GT pivot, it means valid position. So decrement r
                 r--;
             }else {
                 int temp = A[l];
@@ -30,11 +34,12 @@ public class PartitionIndex {
                 r--;
             }
         }
+// At loop end, l will be on element greater than pivot
+// swap pivot with l index element will do the partitioning
+        int temp = A[l];
+        A[l] = pivot;
+        A[e] = temp;
 
-        int temp = A[e-1];
-        A[e-1] = A[r];
-        A[r] = temp;
-
-        return  r+1;
+        return  l;
     }
 }
