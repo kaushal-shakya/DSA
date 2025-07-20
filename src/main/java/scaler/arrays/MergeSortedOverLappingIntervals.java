@@ -16,8 +16,8 @@ public class MergeSortedOverLappingIntervals {
                 )
         );
 
-//        ArrayList<ArrayList<Integer>> ans = solve(A);
-
+        ArrayList<ArrayList<Integer>> ans = solve(input);
+        System.out.println(ans);
     }
 
     public static ArrayList<ArrayList<Integer>> solve(ArrayList<ArrayList<Integer>> A)
@@ -32,10 +32,23 @@ public class MergeSortedOverLappingIntervals {
             int a2 = A.get(i).get(0);
             int b2 = A.get(i).get(1);
 
-            if(a2 > b1){
-
+            if(a2 <= b1) { // Overlapping
+                a1 = Math.min(a1,a2);
+                b1 = Math.max(b1,b2);
+            }
+            else { //Non-overlapping
+               ArrayList<Integer> temp = new ArrayList<>();
+               temp.add(a1);
+               temp.add(b1);
+               ans.add(temp);
+               a1 = a2;
+               b1 = b2;
             }
         }
+        ArrayList<Integer> temp = new ArrayList<>();
+        temp.add(a1);
+        temp.add(b1);
+        ans.add(temp);
 
         return ans;
     }
