@@ -1,0 +1,26 @@
+Modular Arithmetic   |
+----------------------
+Why modulo needed ?
+to limit range
+
+2^10 = 1024 ≈ 10^3.
+
+Properties:
+1. Addition =>
+    ( a + b ) % m = ( a % m + b % m ) % m
+    ( a + m ) % m = a % m
+
+2. Multiplication
+    ( a * b ) % m = (( a % m ) * (b % m )) % m
+
+3. Subtraction ( special )
+    ( a - b ) % m = ( ( a % m ) - ( b % m ) + m ) % m
+
+4. Reminder
+    a % m = ((( a % m ) % m ) % m ) % m
+
+5. Exponentiation
+    a^b % m = (( a % m )^b ) % m
+
+
+
