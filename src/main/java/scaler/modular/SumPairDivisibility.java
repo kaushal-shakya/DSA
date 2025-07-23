@@ -6,17 +6,16 @@ import java.util.Collections;
 public class SumPairDivisibility {
     public static void main(String[] args) {
         ArrayList<Integer> A = new ArrayList<>();
+        A.add(1);
+        A.add(2);
+        A.add(3);
+        A.add(4);
         A.add(5);
-        A.add(17);
-        A.add(100);
-        A.add(11);
-//        A.add(5);
 
-        System.out.println(solve(A, 28));
+        System.out.println(solve(A, 2));
     }
 
     public static int solve(ArrayList<Integer> A, int B) {
-//        int a = (int) Math.pow(); int a = (int) Math.pow();
         ArrayList<Integer> freq = new ArrayList<>(Collections.nCopies(B,0));
         for( Integer ele : A )
         {
@@ -27,7 +26,7 @@ public class SumPairDivisibility {
 
         //Reminder = 0
         int freq_zero = freq.get(0);
-        int ans = (freq_zero * (freq_zero-1))/2;
+        int ans = ( ((freq_zero % B ) * (freq_zero-1) % B) % B ) / 2;
 
         //for handling cases from 1 to B-1
         int l = 1;
@@ -36,7 +35,7 @@ public class SumPairDivisibility {
         {
             int freq_left = freq.get(l);
             int freq_right = freq.get(r);
-            ans += freq_left * freq_right;
+            ans += ( ( freq_left % B ) * (freq_right % B) ) % B;
             l++;
             r--;
         }
@@ -44,7 +43,7 @@ public class SumPairDivisibility {
         //if l == r
         if(l == r){
             int freq_left = freq.get(l);
-            ans += (freq_left * (freq_left - 1))/2;
+            ans += (( (freq_left % B ) * ((freq_left - 1) % B )) % B )/2;
         }
         return ans;
     }
