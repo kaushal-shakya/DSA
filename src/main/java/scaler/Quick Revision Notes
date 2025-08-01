@@ -22,5 +22,19 @@ Properties:
 5. Exponentiation
     a^b % m = (( a % m )^b ) % m
 
+-----------------------------
+|        Bit Manipulation   |
+-----------------------------
 
+Common Bitwise Patterns:
+
+1. Checking if a bit is set: (num >> i) & 1 or num & (1 << i)
+2. Setting a bit: num | (1 << i)
+3. Clearing a bit: num & ~(1 << i)
+4. Toggling a bit: num ^ (1 << i)
+5. Checking if a number is a power of 2: (num & (num - 1)) == 0 (for num > 0)
+6. Counting set bits: Various algorithms (Brian Kernighan's algorithm is efficient).
+7. Getting the rightmost set bit: num & (-num)
+
+Number of set bits in its binary representation (also known as the Hamming weight).
 
