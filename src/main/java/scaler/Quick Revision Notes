@@ -38,3 +38,36 @@ Common Bitwise Patterns:
 
 Number of set bits in its binary representation (also known as the Hamming weight).
 
+_________________
+|     Stacks    |
+-----------------
+
+LIFO
+push
+pop ===> remove & return => r & r
+peek ===> return
+
+Where could be used ?
+reversing
+__________________
+Monotonic Stack   |
+------------------
+Monotonic stack is a data structure that maintains a sequence of elements in a strictly sorted order, either increasing or
+decreasing.
+It is variation of a regular stack where elements are pushed and popped in a way that preserves this monotonic property.
+
+The two types are:
+
+1. Monotonically Increasing Stack:
+Elements from bottom to top are always in increasing order (e.g., [1, 5, 8, 12]).
+New element will always be greater than current top element.
+Pushing a new element, pop all elements from the top that are greater than or equal to the new element before
+pushing it.
+
+2. Monotonically Decreasing Stack:
+Elements from bottom to top are always in decreasing order (e.g., [20, 15, 10, 2]).
+New element will always be smaller than current top element.
+pushing new element => pop all elements from the top that are less than or equal to the new element before pushing it.
+
+
+
