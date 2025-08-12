@@ -6,7 +6,6 @@ public class LargestRectangle {
     public static void main(String[] args) {
         int[] A = {8,6,2,5,6,5,7,4};
 
-
         System.out.println(largestRectangleArea(A));
     }
 
