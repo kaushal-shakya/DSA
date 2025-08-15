@@ -19,7 +19,7 @@ public class ReorderList {
         while (temp != null)
         {
             st.push(temp);
-            temp = temp.next;
+            temp = temp.getNext();
             lengthOfLL++;
         }
         temp = head;
@@ -29,12 +29,12 @@ public class ReorderList {
         while (k > 0 && !st.isEmpty() && temp != null)
         {
             ListNode worker = temp;
-            temp = temp.next;
+            temp = temp.getNext();
             ListNode top = st.pop();
-            worker.next = top;
-            top.next = null;
+            worker.setNext(top);
+            top.setNext(null);
             if(k != 1)
-                top.next = temp;
+                top.setNext(temp);
             k--;
         }
 

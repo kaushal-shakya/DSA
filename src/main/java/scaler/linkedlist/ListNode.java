@@ -4,12 +4,29 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ListNode {
-    public int val;
-    public ListNode next;
+
+    public void setNext(ListNode next) {
+        this.next = next;
+    }
+
+    public void setVal(int val) {
+        this.val = val;
+    }
+
+    int val;
+    ListNode next;
 
     ListNode(int data){
         this.val = data;
         this.next = null;
+    }
+
+    public int getVal() {
+        return val;
+    }
+
+    public ListNode getNext() {
+        return next;
     }
 
     public static ListNode createNode(int val){
