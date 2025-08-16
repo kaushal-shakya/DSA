@@ -12,7 +12,7 @@ public class BasicCalculator2 {
         String s4 = "42";
         String s5 = "1-1+1"; // at same level, operator precedence is left to right
         String s6 = "1+2*5/3+6/4*2";
-        System.out.println(calculate(s6));
+        System.out.println(calculate1(s1));
     }
 
     //Using stack, all test cases passed, but code is too cubersome.
@@ -95,10 +95,45 @@ public class BasicCalculator2 {
         return operand.pop();
     }
 
-    //TODO: using stacks only but after watching solution
-//    public static int calculate1(String s)
-//    {
-//
-//    }
+    //using stacks only but after watching solution
+    //single stack is used.
+    // The Key Intuition : Instead of trying to do all math at once, handle higher-precedence ops immediately,
+    // and store results for lower-precedence ops to sum later.
+    public static int calculate1(String s)
+    {
+        Stack<Integer> numberStack = new Stack<>();
+        char curr_operator = '+';
+        int number = 0;
+
+        for(int i = 0; i < s.length(); i++)
+        {
+            char charValue = s.charAt(i);
+            if(Character.isDigit(charValue)){
+                number = (number * 10) + (charValue - '0');
+            }
+
+            if(!Character.isDigit(charValue) && !Character.isWhitespace(charValue) || (i == s.length()-1))
+            {
+                if(curr_operator == '+'){
+                    numberStack.push(number);
+                } else if(curr_operator == '-'){
+                    numberStack.push(-1 * number);
+                } else if (curr_operator == '*') {
+                    numberStack.push(number * numberStack.pop());
+                } else if (curr_operator == '/') {
+                    numberStack.push(numberStack.pop() / number);
+                }
+                number = 0;
+                curr_operator = charValue;
+            }
+        }
+
+        int result = 0;
+        while (!numberStack.isEmpty()){
+            result += numberStack.pop();
+        }
+
+        return result;
+    }
 
 }
