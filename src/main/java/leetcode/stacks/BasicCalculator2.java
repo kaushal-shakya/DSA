@@ -10,7 +10,7 @@ public class BasicCalculator2 {
         String s2 = " 3+5 / 2 ";
         String s3 = "2+3*2-1";
         String s4 = "42";
-        String s5 = "1-1+1";
+        String s5 = "1-1+1"; // at same level, operator precedence is left to right
         String s6 = "1+2*5/3+6/4*2";
         System.out.println(calculate(s6));
     }
