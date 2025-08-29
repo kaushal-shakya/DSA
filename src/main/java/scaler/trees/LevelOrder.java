@@ -25,20 +25,19 @@ public class LevelOrder {
     }
 
     // correctly prints level   [[1], [2], [3], [4], [5], [6]]
-    public static void helper(BinaryTree.Node root, Queue<BinaryTree.Node> queue, ArrayList<ArrayList<Integer>> result)
-    {
-        if(root == null)
-            return;
-
-        ArrayList<Integer> al = new ArrayList<>();
-        al.add(root.value);
-        result.add(al);
-        queue.add(root.left);
-        queue.add(root.right);
-        queue.poll();
-        helper(queue.peek(), queue, result);
-    }
-
+//    public static void helper(BinaryTree.Node root, Queue<BinaryTree.Node> queue, ArrayList<ArrayList<Integer>> result)
+//    {
+//        if(root == null)
+//            return;
+//
+//        ArrayList<Integer> al = new ArrayList<>();
+//        al.add(root.value);
+//        result.add(al);
+//        queue.add(root.left);
+//        queue.add(root.right);
+//        queue.poll();
+//        helper(queue.peek(), queue, result);
+//    }
 
     // now print [ [1], [2, 3], [4, 5, 6] ]
     public static void helper1(BinaryTree.Node root, Queue<BinaryTree.Node> queue, ArrayList<ArrayList<Integer>> result)
