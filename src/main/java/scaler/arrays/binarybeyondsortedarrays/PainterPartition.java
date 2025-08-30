@@ -54,9 +54,10 @@ public class PainterPartition {
     {
         long noOfPainters = 1; // start with one painter
         long sum = 0; // initially painted no board
-        for(long len : A){
+        for(long len : A)
+        {
             sum = (sum+len)%10000003; // board painted by current painter
-            if(sum > mid){ // if painter painted mid no of boards, add new painter
+            if(sum > mid) { // if painter painted mid no of boards, add new painter
                 sum = len; // Why not 0 ? Because on condition break, we would have already included the mid+1,
                             // which leads to condition failure. So we have to keep track of that board
                 noOfPainters++;
@@ -66,6 +67,6 @@ public class PainterPartition {
 //            return false;
 //
 //        return true;
-        return noOfPainters <= k; // replacement of above if and return statement, this shows subject clarity
+        return noOfPainters <= k; // replacement of above if and return statement, for subject clarity
     }
 }
