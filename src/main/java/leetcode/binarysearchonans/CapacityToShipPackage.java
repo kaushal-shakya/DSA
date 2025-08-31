@@ -13,8 +13,8 @@ public class CapacityToShipPackage {
 
     private static int solve(int[] A, int B)
     {
-        int start = getAnsMinRange(A);
-        int end = getAnsMaxRange(A);
+        int start = getAnsMinRange(A); // find maximum weight to be carried, if we have ships of all package => max of pack wght
+        int end = getAnsMaxRange(A); // find maximum weight to be carried, if we have only 1 ship => sum of all packs
 
         int ans = 0;
         while (start <= end) {
@@ -47,7 +47,6 @@ public class CapacityToShipPackage {
         return ships <= k;
     }
 
-
     private static int getAnsMinRange(int[] A){
         int max = Integer.MIN_VALUE;
         for(int a : A){
@@ -59,6 +58,4 @@ public class CapacityToShipPackage {
     private static int getAnsMaxRange(int[] A){
         return Arrays.stream(A).sum();
     }
-
-
 }
