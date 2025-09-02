@@ -15,7 +15,7 @@ public class BinaryTree {
         Node left;
         Node right;
 
-        Node(int value)
+        public Node(int value)
         {
             this.value = value;
         }
@@ -46,6 +46,10 @@ public class BinaryTree {
     }
 
     private Node root;
+
+    public void setRoot(Node root) {
+        this.root = root;
+    }
 
     public Node getRoot() {
         return root;
