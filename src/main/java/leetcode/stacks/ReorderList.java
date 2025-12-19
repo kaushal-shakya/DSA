@@ -1,6 +1,6 @@
 package leetcode.stacks;
 
-import scaler.linkedlist.ListNode;
+import sc.linkedlist.ListNode;
 
 import java.util.Stack;
 

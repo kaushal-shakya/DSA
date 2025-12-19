@@ -1,11 +1,7 @@
 package leetcode.trees;
 
-import scaler.trees.BinaryTree;
+import sc.trees.BinaryTree;
 
-import javax.swing.tree.TreeNode;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.LinkedList;
 import java.util.Scanner;
 
 public class IsSymmetric {

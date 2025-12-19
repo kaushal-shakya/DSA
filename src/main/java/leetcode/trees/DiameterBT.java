@@ -1,8 +1,7 @@
 package leetcode.trees;
 
-import scaler.trees.BinaryTree;
+import sc.trees.BinaryTree;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class DiameterBT {
