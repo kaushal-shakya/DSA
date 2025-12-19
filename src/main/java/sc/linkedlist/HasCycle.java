@@ -1,6 +1,6 @@
 package sc.linkedlist;
 
-public class DetectCycle {
+public class HasCycle {
 
     public static void main(String[] args) {
         ListNode A = ListNode.createNode(3);
