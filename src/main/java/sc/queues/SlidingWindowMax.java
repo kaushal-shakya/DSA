@@ -14,7 +14,7 @@ public class SlidingWindowMax {
         int[] result = new int[n-k+1];
         Deque<Integer> deque = new LinkedList<>();
         int idx = 0;
-        for(int i = 0; i < n-1; i++){
+        for(int i = 0; i < n; i++){
             while(!deque.isEmpty() && deque.peekFirst() <= i-k)
             {
                 deque.pollFirst();
@@ -22,7 +22,7 @@ public class SlidingWindowMax {
             while (!deque.isEmpty() && A[deque.peekLast()] < A[i]){
                 deque.pollLast();
             }
-            deque.addLast(A[i]);
+            deque.addLast(i);
             if(i >= k-1)
             {
                 result[idx] = A[deque.peekFirst()];
