@@ -29,9 +29,7 @@ public class ReorderLL {
         ListNode tailNodeOfReverseLL = traverse(reverseNode);
         tailNodeOfReverseLL.next = middleNode;
         middleNode.next = null;
-//        System.out.println(middleNode.getVal());
-//        ListNode.printLinkedList(reverseNode);
-//        System.out.println();
+
         ListNode temp1 = null, temp2 = null;
         while(t1 != null && t1 != t2) {
             temp1 = t1.next;
