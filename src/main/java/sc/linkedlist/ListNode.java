@@ -15,6 +15,9 @@ public class ListNode {
     int val;
     ListNode next;
 
+    ListNode() {
+
+    }
     ListNode(int data){
         this.val = data;
         this.next = null;
