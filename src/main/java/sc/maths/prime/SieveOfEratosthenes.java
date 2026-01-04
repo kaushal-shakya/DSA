@@ -23,4 +23,7 @@ public class SieveOfEratosthenes {
                 System.out.print(i + " ");
         }
     }
+
+    // TC : n(log(logn))
+    // SC : O(n)
 }
