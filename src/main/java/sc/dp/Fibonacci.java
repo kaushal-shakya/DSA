@@ -1,4 +1,4 @@
-package sc.arrays.dp;
+package sc.dp;
 
 import java.util.Arrays;
 
