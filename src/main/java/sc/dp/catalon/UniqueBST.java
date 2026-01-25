@@ -1,4 +1,4 @@
-package sc.dp;
+package sc.dp.catalon;
 
 public class UniqueBST {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package sc.dp;
+package sc.dp.knapsack;
 
 import java.util.Arrays;
 
