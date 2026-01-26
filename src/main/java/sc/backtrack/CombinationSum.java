@@ -10,6 +10,7 @@ public class CombinationSum {
         if(target == 0) {
             return ;
         }
+        //This approach used here to exclude different combination could be used in different question.
         for(int i=k; i<candidates.length; i++) {
             if (target >= candidates[i]) {
                 temp.add(candidates[i]);
