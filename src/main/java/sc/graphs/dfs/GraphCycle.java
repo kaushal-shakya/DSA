@@ -1,4 +1,4 @@
-package sc.graphs;
+package sc.graphs.dfs;
 
 import java.util.ArrayList;
 

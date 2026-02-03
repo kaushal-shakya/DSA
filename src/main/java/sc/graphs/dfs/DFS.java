@@ -1,10 +1,8 @@
-package sc.graphs;
+package sc.graphs.dfs;
 
 import java.util.ArrayList;
 
 public class DFS {
-
-
     private void dfs(ArrayList<Integer>[] graph, int start, boolean[] visited) {
         visited[start] = true;
         System.out.println(start);

@@ -1,4 +1,4 @@
-package sc.graphs;
+package sc.graphs.mst;
 
 import java.util.ArrayList;
 import java.util.Comparator;

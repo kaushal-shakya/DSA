@@ -1,4 +1,4 @@
-package sc.graphs;
+package sc.graphs.bfs;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
