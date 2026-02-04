@@ -38,7 +38,7 @@ public class BFS {
             graph[start].add(end);
         }
 
-        boolean[] visited = new boolean[A];
+            boolean[] visited = new boolean[A];
         for (int i = 0; i < visited.length; i++) {
             if(!visited[i])
                 bfsTraversal(graph, i, visited);
