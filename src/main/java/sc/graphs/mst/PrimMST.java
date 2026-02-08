@@ -34,14 +34,14 @@ public class PrimMST {
     int ans = 0;
     private void primMST(ArrayList<Pair>[] graph, boolean[] visited, int source) {
 
-        pq.add(new Pair(-1,source,0));
+        pq.add(new Pair(-1,source,0)); // Add source node to pq
 
         while (!pq.isEmpty()) {
-            Pair rem = pq.remove();
+            Pair rem = pq.remove(); // Remove node
             int u = rem.end;
             int cost = rem.cost;
 
-            if(visited[u])
+            if(visited[u])  // visited check
                 continue;
 
             visited[u] = true;

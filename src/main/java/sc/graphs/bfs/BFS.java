@@ -9,12 +9,16 @@ public class BFS {
     private void bfsTraversal(ArrayList<Integer>[] graph, int source, boolean[] visited) {
         Queue<Integer> queue = new LinkedList<>();
         queue.add(source);
-        visited[source] = true;
+
 
         while (queue.size() > 0) {
             int remove = queue.remove();
             System.out.print(remove + " ");
 
+            if(visited[remove])
+                continue;
+
+            visited[remove] = true;
             for ( int nbr : graph[remove]) {
                 if(!visited[nbr]) {
                     visited[nbr] = true;
