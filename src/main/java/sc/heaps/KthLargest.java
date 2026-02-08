@@ -2,7 +2,16 @@ package sc.heaps;
 
 import java.util.PriorityQueue;
 
+
+
 public class KthLargest {
+    /*
+        Algorithm idea :
+        1. initialize pq with k element.
+        2. if any of the next element is better than current worst.
+        3. Remove current worst and add new better element.
+    */
+
     public static int findKthLargest(int[] nums, int k) {
         PriorityQueue<Integer> pq = new PriorityQueue<>();
 
