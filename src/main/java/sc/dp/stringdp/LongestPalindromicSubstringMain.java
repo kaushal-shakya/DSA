@@ -1,4 +1,4 @@
-package sc.dp;
+package sc.dp.stringdp;
 
 //5. Longest Palindromic Substring leetcode
 class LongestPalindromicSubstring {

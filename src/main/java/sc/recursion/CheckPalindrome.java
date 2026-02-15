@@ -6,13 +6,13 @@ public class CheckPalindrome {
         System.out.println(solve("malayalam"));
         System.out.println(solve("abcda"));
         System.out.println(solve("radar"));
-
     }
 
     public static boolean solve(String s){
 
         char[] input = s.toCharArray();
         return checkPalidrome(input, 0, input.length-1);
+//        return isPalindrome(s, 0, s.length()-1);
     }
 
     public static boolean checkPalidrome(char[] input, int start, int end)
@@ -26,5 +26,16 @@ public class CheckPalindrome {
         return checkPalidrome(input, start+1, end-1);
     }
 
+    public static boolean isPalindrome(String s, int start, int end) {
+        if(start >= end)
+            return true;
+
+        if(s.charAt(start) != s.charAt(end))
+            return false;
+
+//         ans = true;
+        boolean ans = isPalindrome(s, start+1, end-1);
+        return ans;
+    }
 
 }
