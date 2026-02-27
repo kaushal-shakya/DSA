@@ -107,7 +107,7 @@ class SurroundedRegionMain {
         int[][] visited = new int[rows][columns];
 
         //check boundary for 0
-        //check first row
+        //check first and last row
         for (int i = 0; i < columns; i++) {
             if(visited[0][i] == 0 && board[0][i] == 'O')
                 dfs(board, 0, i, visited);
@@ -115,7 +115,7 @@ class SurroundedRegionMain {
             if(visited[rows-1][i] == 0 && board[rows-1][i] == 'O')
                 dfs(board, rows-1, i, visited);
         }
-        //check first column
+        //check first column and last column
         for (int i = 0; i < rows; i++) {
             if(visited[i][0] == 0 && board[i][0] == 'O')
                 dfs(board, i, 0, visited);
