@@ -13,7 +13,7 @@ public class SieveOfEratosthenes {
 
         for (int i = 2; i*i <= n; i++) {
             if(sieve[i]) {
-                for(int j=i*i; j <= n; j=j+i) {
+                for(int j=i*i; j <= n; j=j+i) { //Optimization : Multiples < i² are already removed by smaller primes. So we start from: j = i * i
                     sieve[j] = false;
                 }
             }

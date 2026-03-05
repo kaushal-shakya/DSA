@@ -17,22 +17,21 @@ class Pair {
 
 class FractionKnapsackIntermediate {
 
-    private BigDecimal helper(Pair[] p, int capacity) {
-        BigDecimal ans = BigDecimal.ZERO;
+    private int helper(Pair[] p, int capacity) {
+        double ans = 0.0;
+
         for (Pair item : p) {
             if(item.weight <= capacity) {
-                ans = ans.add(BigDecimal.valueOf(item.happiness));
+                ans += item.happiness;
                 capacity -= item.weight;
             } else {
-                BigDecimal fraction = BigDecimal.valueOf(capacity)
-                        .divide(BigDecimal.valueOf(item.weight), 10, RoundingMode.HALF_UP);
-                ans = ans.add(BigDecimal.valueOf(item.happiness).multiply(fraction));
-                break;
+                ans += (( capacity / item.weight ) * 1.0 ) * (item.happiness * 1.0 / item.weight);
+                capacity = 0;
             }
         }
-        return ans;
-    }
 
+        return (int)ans*100;
+    }
     int solve(int[] happiness, int[] weight, int capacity)
     {
         Pair[] pair = new Pair[happiness.length];
@@ -44,8 +43,8 @@ class FractionKnapsackIntermediate {
         Arrays.sort(pair, new Comparator<Pair>() {
             @Override
             public int compare(Pair o1, Pair o2) {
-                double o1HappinessPerWeight = (o1.happiness * 1.0 / o1.weight);
-                double o2HappinessPerWeight = (o2.happiness * 1.0 / o2.weight);
+                double o1HappinessPerWeight = ((o1.happiness * 1.0) / o1.weight);
+                double o2HappinessPerWeight = ((o2.happiness * 1.0) / o2.weight);
 
                 if(o1HappinessPerWeight < o2HappinessPerWeight)
                     return 1;
@@ -56,8 +55,7 @@ class FractionKnapsackIntermediate {
             }
         });
 
-        BigDecimal result = helper(pair, capacity).multiply(BigDecimal.valueOf(100));
-        return result.setScale(0, RoundingMode.FLOOR).intValue();
+        return helper(pair, capacity);
     }
 }
 
