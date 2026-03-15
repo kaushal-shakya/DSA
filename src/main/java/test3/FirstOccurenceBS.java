@@ -1,6 +1,4 @@
-package contest.test3;
-
-import java.util.Scanner;
+package test3;
 
 public class FirstOccurenceBS {
     public static void main(String[] args) {

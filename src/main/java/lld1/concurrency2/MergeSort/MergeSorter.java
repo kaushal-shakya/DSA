@@ -1,4 +1,4 @@
-package concurrency2.MergeSort;
+package lld1.concurrency2.MergeSort;
 
 import java.util.List;
 import java.util.concurrent.Callable;

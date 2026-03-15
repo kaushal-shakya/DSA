@@ -1,4 +1,4 @@
-package concurrency2.imageprocessing;
+package lld1.concurrency2.imageprocessing;
 
 public class ArrayRepainterTask implements Runnable {
 

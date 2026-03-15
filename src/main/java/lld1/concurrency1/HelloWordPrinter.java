@@ -1,4 +1,4 @@
-package concurrency1;
+package lld1.concurrency1;
 
 public class HelloWordPrinter implements Runnable{
 

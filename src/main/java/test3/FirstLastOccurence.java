@@ -1,6 +1,4 @@
-package contest.test3;
-
-import java.util.Arrays;
+package test3;
 
 public class FirstLastOccurence {
     public static void main(String[] args) {

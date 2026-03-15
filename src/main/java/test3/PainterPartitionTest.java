@@ -1,4 +1,4 @@
-package contest.test3;
+package test3;
 
 //Problem Statement: https://www.geeksforgeeks.org/problems/the-painters-partition-problem1535/1
 // Given an array/list of length ‘N’, where the array/list represents the boards and each element of the

@@ -1,4 +1,4 @@
-package contest.test3;
+package test3;
 
 public class LocalMaxima {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package contest.test3;
+package test3;
 
 import java.util.HashMap;
 import java.util.Iterator;
