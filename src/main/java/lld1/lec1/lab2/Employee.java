@@ -20,6 +20,16 @@ public class Employee {
     double salary;
     int experience;
 
+//    Java automatically create this constructor and assign default values to members.
+//    Employee() {
+//        employeeId = 0;
+//        name = null;
+//        email= null;
+//        department = null;
+//        salary = 0.0;
+//        experience = 0;
+//    }
+
     double promoted(int increament) {
                 salary = salary + (((double) increament /100) * salary);
                 return salary;

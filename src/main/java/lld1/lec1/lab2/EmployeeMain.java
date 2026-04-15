@@ -2,7 +2,7 @@ package lld1.lec1.lab2;
 
 public class EmployeeMain {
     public static void main(String[] args) {
-        Employee e1 = new Employee();
+        Employee e1 = new Employee(); // Employee() is constructor
         e1.name = "A";
         e1.email= "test1@gmai.com";
         e1.department = "Finance";
@@ -30,3 +30,10 @@ public class EmployeeMain {
 
     }
 }
+
+/*
+Problems:
+1. Verbose : Too many lines of repeated code
+2. Error-prone : Easy to forget to set a field.
+3. No Validation -> Nothing stops this system from creating an employee with negative salary.
+ */
