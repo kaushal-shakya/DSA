@@ -13,7 +13,7 @@ public class LocalMinima {
             if( (mid == 0 || arr[mid] < arr[mid-1] ) && (mid == arr.length-1 || arr[mid] < arr[mid+1] ) )
                 return ans = arr[mid];
             else if(mid > 0 && arr[mid] > arr[mid-1]) {
-                end = mid-
+                end = mid-1;
             } else {
                 start = mid+1;
             }
