@@ -9,9 +9,16 @@ public class Main {
 
         //Using a separate class
         HelloWordPrinter helloWordPrinter = new HelloWordPrinter();
-        Thread t1 = new Thread(helloWordPrinter);
-        t1.start();
 
+        System.out.println("----Calling run() directly : Direct run Method Invocation -----");
+        helloWordPrinter.run();
+
+        Thread t1 = new Thread(helloWordPrinter); // NEW Thread is a thread that’s been created
+        System.out.println("-----Calling start()-------");
+        t1.start(); // Calling start() method, it’s moved from NEW to RUNNABLE state.
+        System.out.println(t1.getState()); // RUNNABLE
+
+//        t1.start(); // This throws IllegalThreadStateException.
         //Anonymous class, no separate class
         Thread t2 = new Thread(new Runnable() {
             @Override
