@@ -1,4 +1,4 @@
-package lld1.concurrency2.AdderSubtractor;
+package lld1.concurrency2.AdderSubtractor.FixWithSyncroziedKey;
 
 public class Subtracter implements Runnable {
 
@@ -10,8 +10,10 @@ public class Subtracter implements Runnable {
 
     @Override
     public void run() {
-        for (int i=1; i <=100; i++) {
-            c.x -= i;
+        for (int i=1; i <=10000; i++) {
+            synchronized (c) {
+                c.x -= i;
+            }
         }
     }
 }

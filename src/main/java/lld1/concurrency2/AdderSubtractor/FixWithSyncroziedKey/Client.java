@@ -1,4 +1,4 @@
-package lld1.concurrency2.AdderSubtractor;
+package lld1.concurrency2.AdderSubtractor.FixWithSyncroziedKey;
 
 public class Client {
     public static void main(String[] args) throws InterruptedException {
