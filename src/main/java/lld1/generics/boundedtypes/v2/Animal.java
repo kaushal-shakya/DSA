@@ -20,4 +20,17 @@ public class Animal {
         for(Animal a : animals)
             a.eat();
     }
+
+    public void feedAnimalsWithAddingAnimal(List<? extends Animal> animal) { //Parameter could be List<Dog>, List<Cat>, List<Mammal> and List<Animal>
+//        animal.add(new Dog()); // Compile error, uncomment to check the error
+        //Notes :
+        // ? extends T --> read only
+        // You can take OUT.
+        // Can't put more thing IN because you might put the wrong type.
+    }
+
+    public void addDogs(List<? super Dog> list) {
+        list.add(new Dog()); //safe to add dogs
+        // ? super Dog --> some unknown type which is a dog or parent of Dog.
+    }
 }
