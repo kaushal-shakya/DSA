@@ -27,9 +27,7 @@ public class Client {
         System.out.println(carList);
 
         //CarSeatsComparator using lambdas
-        Collections.sort(carList, (Car c11, Car c21) -> {
-            return c11.noOfSeats - c21.noOfSeats;
-        });
+        Collections.sort(carList, (Car c11, Car c21) -> c11.noOfSeats - c21.noOfSeats);
 
         System.out.println(carList);
     }
