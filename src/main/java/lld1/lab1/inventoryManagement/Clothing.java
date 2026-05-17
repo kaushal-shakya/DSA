@@ -1,18 +1,18 @@
 package lld1.lab1.inventoryManagement;
 
 public class Clothing extends  Item {
-    private int size;
+    private String size;
 
-    public Clothing(int id, String name, double price, int quantity,int size) {
+    public Clothing(String id, String name, double price, int quantity,String size) {
         super(id, name, price, quantity);
         this.size = size;
     }
 
-    public int getSize() {
+    public String getSize() {
         return size;
     }
 
-    public void setSize(int size) {
+    public void setSize(String size) {
         this.size = size;
     }
 }
