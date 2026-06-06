@@ -1,6 +1,7 @@
 package lld1.streams;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
@@ -54,6 +55,9 @@ public class StreamsLevel1 {
         List<Integer> collectorString = list.stream().collect(collector1);
         System.out.println("\nCollector " + collectorString);
 
+        /***
+         * Predicate is a functional interface
+         */
         Predicate<Integer> predicate = (x) -> x % 2 != 0;
         List<Integer> listAfterPredicateFiltering = list.stream().filter(predicate).collect(Collectors.toList());
         System.out.println("\nFiltering after applying predicate : " + listAfterPredicateFiltering);
@@ -63,5 +67,22 @@ public class StreamsLevel1 {
 
         boolean b = list.stream().anyMatch(x -> x % 2 == 0);
         System.out.println("\nAnyMatch, this check any integer is divisible by 2 "+ b);
+
+        List<Integer> distinctListInput = List.of(1,2,3,4,5,5,6,7);
+        List<Integer> disElements = distinctListInput.stream().distinct().collect(Collectors.toList());
+        System.out.println("\nOriginal List : " + distinctListInput
+            + "\nAfter applying distinct : " + disElements);
+
+        /**
+         * In Java, any local variable used inside a lambda expression (like sum inside the forEach) must be final or effectively final.
+            int sum = 0;
+            List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+            numbers.forEach(n -> sum += n);
+            System.out.println(sum);
+        */
+
+
     }
+
+
 }
