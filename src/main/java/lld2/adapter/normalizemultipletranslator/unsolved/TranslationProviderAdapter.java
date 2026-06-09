@@ -1,4 +1,6 @@
 package lld2.adapter.normalizemultipletranslator.unsolved;
 
-public class TranslationProviderAdapter {
+import java.util.List;
+
+public interface TranslationProviderAdapter {
 }
