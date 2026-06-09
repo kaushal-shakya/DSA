@@ -1,0 +1,50 @@
+Adapter Pattern: Normalize Multiple Translation APIs
+Objective
+Build adapters that expose a unified interface over different translation providers (Google, Microsoft) so the app can call them the same way.
+
+Given
+External provider SDK stubs (do not change):
+
+external.GoogleTranslateApi → convert(GoogleTranslationRequest) + getLanguages()
+external.MicrosoftTranslateApi → translate(text, src, tgt) + getSupportedLanguages()
+DTOs: GoogleTranslationRequest, TranslationRequest
+Tests: TranslationAdapterTest (your work must satisfy these).
+
+Unified Interface (you must implement)
+
+public interface TranslationProviderAdapter {
+    String translate(TranslationRequest request);
+    List<String> getSupportedLanguages();
+}
+Tasks
+Google adapter
+
+Class: GoogleTranslationAdapter implements TranslationProviderAdapter
+
+Use composition: hold a field GoogleTranslateApi.
+
+translate(…): map TranslationRequest → GoogleTranslationRequest
+
+Include an appropriate confidence value (e.g., 0.8).
+Call googleTranslateApi.convert(…).
+getSupportedLanguages(): delegate togoogleTranslateApi.getLanguages()`.
+
+Microsoft adapter
+
+Class: MicrosoftTranslationAdapter implements TranslationProviderAdapter
+Use composition: hold a field MicrosoftTranslateApi.
+translate(…): delegate to translate(text, src, tgt).
+getSupportedLanguages(): delegate to getSupportedLanguages().
+Do not modify provider APIs or the test class. Adapters must own a provider field (composition), not inheritance.
+
+Acceptance Criteria (what the tests check)
+TranslationProviderAdapter exposes exactly two methods above.
+There are at least two implementations of the interface (Google, Microsoft).
+Each adapter has a field of type GoogleTranslateApi or MicrosoftTranslateApi.
+TranslationRequest has 3 String + 1 Double fields, with a no-arg constructor.
+Calling getSupportedLanguages() through any adapter returns the provider list ["hindi", "marathi", "kannada"].
+Calling translate(…) on each adapter delegates to the underlying provider method.
+Deliverables
+GoogleTranslationAdapter.java
+MicrosoftTranslationAdapter.java
+(If needed) helper mapper inside Google adapter to build GoogleTranslationRequest.
