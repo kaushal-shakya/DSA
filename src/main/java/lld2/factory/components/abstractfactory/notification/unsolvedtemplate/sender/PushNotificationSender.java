@@ -1,7 +1,8 @@
-package com.assignment.question.sender;
+package lld2.factory.components.abstractfactory.notification.unsolvedtemplate.sender;
 
-import com.assignment.question.NotificationType;
-import com.assignment.question.notification.Notification;
+
+import lld2.factory.components.abstractfactory.notification.unsolvedtemplate.NotificationType;
+import lld2.factory.components.abstractfactory.notification.unsolvedtemplate.notification.Notification;
 
 public class PushNotificationSender extends NotificationSender {
 

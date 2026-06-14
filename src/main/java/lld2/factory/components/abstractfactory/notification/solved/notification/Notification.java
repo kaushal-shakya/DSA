@@ -1,7 +1,7 @@
 package lld2.factory.components.abstractfactory.notification.solved.notification;
 
-import lld2.factory.components.abstractfactory.notification.unsolvedtemplate.NotificationType;
-import lld2.factory.components.abstractfactory.notification.unsolvedtemplate.template.NotificationTemplate;
+import lld2.factory.components.abstractfactory.notification.solved.NotificationType;
+import lld2.factory.components.abstractfactory.notification.solved.template.NotificationTemplate;
 
 public abstract class Notification {
 

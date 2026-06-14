@@ -2,7 +2,6 @@ package lld2.factory.components.abstractfactory.notification.solved.sender;
 
 import lld2.factory.components.abstractfactory.notification.solved.NotificationType;
 import lld2.factory.components.abstractfactory.notification.solved.notification.Notification;
-import lld2.factory.components.abstractfactory.notification.solved.sender.NotificationSender;
 
 public class PushNotificationSender extends NotificationSender {
 
