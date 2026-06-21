@@ -44,7 +44,7 @@ public class Bullet {
                   double speed,
                   double currentX, double currentY, double currentZ,
                   double targetX, double targetY, double targetZ) {
-        this.type = type;
+        this.type = type; // Copies only the reference, not the actual BulletType object.
         this.directionX = directionX;
         this.directionY = directionY;
         this.directionZ = directionZ;
