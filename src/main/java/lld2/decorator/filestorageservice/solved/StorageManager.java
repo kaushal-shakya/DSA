@@ -1,7 +1,8 @@
 package lld2.decorator.filestorageservice.solved;
 
-import contest.utils.StorageUtils;
-import contest.utils.VirusDetectedException;
+
+import lld2.decorator.filestorageservice.solved.utils.StorageUtils;
+import lld2.decorator.filestorageservice.solved.utils.VirusDetectedException;
 
 public class StorageManager {
 

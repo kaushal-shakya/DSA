@@ -1,8 +1,9 @@
 package lld2.decorator.apidecorator.unsolved.api;
 
-import apidecorator.utils.ApiUtils;
-import apidecorator.utils.Logger;
-import apidecorator.utils.RateLimitExceededException;
+
+import lld2.decorator.apidecorator.unsolved.utils.ApiUtils;
+import lld2.decorator.apidecorator.unsolved.utils.Logger;
+import lld2.decorator.apidecorator.unsolved.utils.RateLimitExceededException;
 
 public class ECommerceApi {
 
