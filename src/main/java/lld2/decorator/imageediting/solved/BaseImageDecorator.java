@@ -9,14 +9,9 @@ import lld2.decorator.imageediting.solved.utils.ImageUtils;
  * Inherit from the image editor interface {@link decorator.ImageEditor}.
  */
 
-public class BaseImageDecorator implements ImageEditor {
+public abstract class BaseImageDecorator implements ImageEditor {
 
-    private Image image;
     protected ImageEditor imageEditor;
-
-    public BaseImageDecorator() {
-        this.imageEditor = null;
-    }
 
     public BaseImageDecorator(ImageEditor imageEditor) {
         this.imageEditor = imageEditor;
@@ -24,12 +19,12 @@ public class BaseImageDecorator implements ImageEditor {
 
     @Override
     public Image readImage(String filePath) {
-        return imageEditor.readImage(filePath);
+        return ImageUtils.read(filePath);
     }
 
     @Override
     public String render(Image image) {
-        return image + imageEditor.render(image);
+        return ImageUtils.render(image);
     }
 
     /**

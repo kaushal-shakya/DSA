@@ -11,21 +11,22 @@ import lld2.decorator.imageediting.solved.utils.ImageUtils;
  * 2. You will also need to call the next layer from {@link BaseImageDecorator} in the chain to get the image and then apply the blur filter.
  * 3. Each decorator would also need a constructor that takes the next layer of type {@link ImageEditor} and calls the super constructor.
  */
-public class BlurImageDecorator implements ImageEditor {
+public class BlurImageDecorator extends BaseImageDecorator {
 
     protected ImageEditor imageEditor;
 
-    BlurImageDecorator(ImageEditor imageEditor){
-        this.imageEditor = imageEditor;
+    public BlurImageDecorator(ImageEditor imageEditor){
+        super(imageEditor);
     }
 
     @Override
     public Image readImage(String filePath) {
-        return null;
+        return ImageUtils.read(filePath);
     }
 
     @Override
     public String render(Image image) {
+        ImageUtils.applyBlur(image);
         return "";
     }
 }

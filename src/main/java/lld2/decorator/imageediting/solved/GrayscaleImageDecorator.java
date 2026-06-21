@@ -1,6 +1,7 @@
 package lld2.decorator.imageediting.solved;
 
 import lld2.decorator.imageediting.solved.utils.Image;
+import lld2.decorator.imageediting.solved.utils.ImageUtils;
 
 /**
  * TODO Task 4a - Extend the {@link BaseImageDecorator} interface to convert the image to grayscale.
@@ -9,21 +10,22 @@ import lld2.decorator.imageediting.solved.utils.Image;
  * 2. You will also need to call the next layer from {@link BaseImageDecorator} in the chain to get the image and then convert it to grayscale.
  * 3. Each decorator would also need a constructor that takes the next layer of type {@link ImageEditor} and calls the super constructor.
  */
-public class GrayscaleImageDecorator implements ImageEditor {
+public class GrayscaleImageDecorator extends BaseImageDecorator {
 
     protected ImageEditor imageEditor;
 
-    GrayscaleImageDecorator(ImageEditor imageEditor) {
-        this.imageEditor = imageEditor;
+    public GrayscaleImageDecorator(ImageEditor imageEditor) {
+        super(imageEditor);
     }
 
     @Override
     public Image readImage(String filePath) {
-        return null;
+        return ImageUtils.read(filePath);
     }
 
     @Override
     public String render(Image image) {
+        ImageUtils.convertToGrayscale(image);
         return "";
     }
 }
